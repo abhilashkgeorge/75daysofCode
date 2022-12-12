@@ -5,5 +5,5 @@ This is an extensive guide on the topics used during interviews from leetcode
 -> The goal here is to understand how its done rather than getting it done
 -> Also try to find out the optimal solution for a given question 
 
-Let's begin
+Let's begin...
 
