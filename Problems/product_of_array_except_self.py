@@ -58,27 +58,43 @@ class Solution(object):
 
 # THE ULTIMATE SOLUTION
 
-        # Create a new array to store the result
-        result = []
+        # # Create a new array to store the result
+        # result = []
         
-        # Loop through the input array
-        for i in range(len(nums)):
-            # Initialize a variable to store the product
-            # Set it to 1 initially to account for the fact
-            # that we will be multiplying the elements together
-            product = 1
+        # # Loop through the input array
+        # for i in range(len(nums)):
+        #     # Initialize a variable to store the product
+        #     # Set it to 1 initially to account for the fact
+        #     # that we will be multiplying the elements together
+        #     product = 1
             
-            # Loop through the array again, excluding the current element
-            for j in range(len(nums)):
-                if i != j:
-                    # Multiply the current element with the product
-                    product *= nums[j]
+        #     # Loop through the array again, excluding the current element
+        #     for j in range(len(nums)):
+        #         if i != j:
+        #             # Multiply the current element with the product
+        #             product *= nums[j]
             
-            # Append the product to the result array
-            result.append(product)
+        #     # Append the product to the result array
+        #     result.append(product)
         
-        # Return the result array
-        return result
+        # # Return the result array
+        # return result
+
+#Time limit exceed for the above one  so the next attempt
+
+        n = len(nums)
+        answer = [1] * n
+        prefix = 1
+        for i in range(n):
+            answer[i] *= prefix
+            prefix *= nums[i]
+
+        suffix = 1
+        for i in range(n - 1, -1, -1):
+            answer[i] *= suffix
+            suffix *= nums[i]
+
+        return answer
 
 
 obj1 = Solution()
